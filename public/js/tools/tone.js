@@ -18,6 +18,8 @@ class TegakiTone extends TegakiPencil {
     this.useSizeDynamics = true;
     this.useAlphaDynamics = true;
     this.usePreserveAlpha = true;
+    
+    this.sizeDynamicsEnabled = false;
     this.alphaDynamicsEnabled = true;
     
     this.matrix = [
