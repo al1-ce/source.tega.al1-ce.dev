@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Tegaki</title>
+  <link rel="stylesheet" href="/css/tegaki.css">
+  <script src="/js/strings/en.js"></script>
+  <script src="/js/tools/tool.js"></script>
+  <script src="/js/tools/brush.js"></script>
+  <script src="/js/tools/pencil.js"></script>
+  <script src="/js/tools/pen.js"></script>
+  <script src="/js/tools/airbrush.js"></script>
+  <script src="/js/tools/blur.js"></script>
+  <script src="/js/tools/bucket.js"></script>
+  <script src="/js/tools/eraser.js"></script>
+  <script src="/js/tools/pipette.js"></script>
+  <script src="/js/tools/tone.js"></script>
+  <script src="/js/$T.js"></script>
+  <script src="/js/cursor.js"></script>
+  <script src="/js/history.js"></script>
+  <script src="/js/layers.js"></script>
+  <script src="/js/keybinds.js"></script>
+  <script src="/js/palettes.js"></script>
+  <script src="/js/ui.js"></script>
+  <script src="/js/pressure.js"></script>
+  <script src="/js/replayevents.js"></script>
+  <script src="/js/main.js"></script>
+</head>
+<body>
+<script type="text/javascript">
+  function onTegakiDone() {
+    var w = window.open('');
+    
+    Tegaki.flatten().toBlob(
+      function(b) { w.location = URL.createObjectURL(b); },
+      'image/png'
+    );
+  }
+  
+  Tegaki.open({
+    onDone: onTegakiDone,
+    width: 500,
+    height: 500
+  });
+</script>
+</body>
+</html>
