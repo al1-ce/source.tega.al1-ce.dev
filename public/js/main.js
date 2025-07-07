@@ -359,6 +359,10 @@ var Tegaki = {
     Tegaki.updatePosOffset();
     TegakiCursor.updateCanvasSize();
   },
+
+  previous_tool: null,
+  is_tool_eraser: false,
+  eraser_tool_class: null,
   
   initKeybinds: function() {
     var cls, tool;
@@ -380,9 +384,24 @@ var Tegaki = {
       cls = Tegaki.tools[tool];
       
       if (cls.keybind) {
-        TegakiKeybinds.bind(cls.keybind, cls, 'set');
+        if (cls.keybind != 'e') {
+          TegakiKeybinds.bind(cls.keybind, cls, 'set');
+        } else {
+          TegakiKeybinds.bind(cls.keybind, Tegaki, 'keyToggleEraser');
+          Tegaki.eraser_tool_class = cls;
+        }
       }
     }
+  },
+
+  keyToggleEraser: function() {
+    if (Tegaki.is_tool_eraser) {
+      Tegaki.previous_tool.set();
+    } else {
+      Tegaki.previous_tool = Tegaki.tool;
+      Tegaki.eraser_tool_class.set();
+    }
+    Tegaki.is_tool_eraser = !Tegaki.is_tool_eraser;
   },
   
   getPointerPos: function(e, axis) {
