@@ -18,6 +18,8 @@ class TegakiAirbrush extends TegakiBrush {
     this.useFlowDynamics = true;
     
     this.usePreserveAlpha = true;
+    
+    this.flowDynamicsEnabled = true;
   }
   
   easeFlow(flow) {

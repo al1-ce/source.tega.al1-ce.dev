@@ -12,12 +12,14 @@ class TegakiPencil extends TegakiBrush {
     
     this.useFlow = false;
     
-    this.size = 1;
+    this.size = 2;
     this.alpha = 1.0;
     
     this.useSizeDynamics = true;
     this.useAlphaDynamics = true;
     this.usePreserveAlpha = true;
+
+    this.sizeDynamicsEnabled = true;
   }
   
   generateShape(size) {

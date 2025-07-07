@@ -19,6 +19,9 @@ class TegakiPen extends TegakiBrush {
     this.useFlowDynamics = true;
     
     this.usePreserveAlpha = true;
+
+    this.sizeDynamicsEnabled = true;
+    this.alphaDynamicsEnabled = true;
   }
   
   easeFlow(flow) {

@@ -10,7 +10,7 @@ class TegakiEraser extends TegakiBrush {
     
     this.step = 0.1;
     
-    this.size = 8;
+    this.size = 4;
     this.alpha = 1.0;
     
     this.useFlow = false;
@@ -18,6 +18,7 @@ class TegakiEraser extends TegakiBrush {
     this.useSizeDynamics = true;
     this.useAlphaDynamics = true;
     this.usePreserveAlpha = false;
+    this.sizeDynamicsEnabled = true;
     
     this.tipId = 0;
     this.tipList = [ 'pencil', 'pen', 'airbrush' ];
