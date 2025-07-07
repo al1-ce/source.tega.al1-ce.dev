@@ -368,10 +368,13 @@ var Tegaki = {
     }
     
     TegakiKeybinds.bind('ctrl+z', TegakiHistory, 'undo', 'undo', 'Ctrl+Z');
-    TegakiKeybinds.bind('ctrl+y', TegakiHistory, 'redo', 'redo', 'Ctrl+Y');
+    TegakiKeybinds.bind('ctrl+shift+z', TegakiHistory, 'redo', 'redo', 'Ctrl+Shift+Z');
     
-    TegakiKeybinds.bind('+', Tegaki, 'setToolSizeUp', 'toolSize', 'Numpad +/-');
-    TegakiKeybinds.bind('-', Tegaki, 'setToolSizeDown');
+    TegakiKeybinds.bind(']', Tegaki, 'setToolSizeUp', 'setToolSizeUp', ']');
+    TegakiKeybinds.bind('[', Tegaki, 'setToolSizeDown', 'setToolSizeDown', '[');
+    
+    TegakiKeybinds.bind('+', Tegaki, 'setZoomIn', 'setZoomIn', 'Numpad +');
+    TegakiKeybinds.bind('-', Tegaki, 'setZoomOut', 'setZoomOut', 'Numpad -');
     
     for (tool in Tegaki.tools) {
       cls = Tegaki.tools[tool];
@@ -666,6 +669,16 @@ var Tegaki = {
     
     Tegaki.updateCursorStatus();
     Tegaki.updatePosOffset();
+  },
+  
+  setZoomIn: function() {
+    Tegaki.setZoom(Tegaki.zoomLevel + 1);
+    TegakiCursor.updateCanvasSize();
+  },
+  
+  setZoomOut: function() {
+    Tegaki.setZoom(Tegaki.zoomLevel - 1);
+    TegakiCursor.updateCanvasSize();
   },
   
   onZoomChange: function() {
