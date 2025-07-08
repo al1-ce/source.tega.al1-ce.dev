@@ -24,7 +24,6 @@ var TegakiColorPalettes = [
     '#384B43','#CFEADD', // みどり
     '#313768','#D5E9F3', // あお
     '#A80515','#F1D0D0', // あか
-    '#4B3E38','#EBE5D5', // 不明
     '#334245','#e6eaeb', // @yamazin_ex
     '#231816','#cccccc', // 少女終末旅行
   ]
