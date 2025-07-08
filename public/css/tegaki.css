@@ -593,7 +593,7 @@
 }
 
 #tegaki-layers-grid {
-  height: 84px;
+  height: 30vh; /* EDIT: 84px; */
   min-height: 84px;
   overflow: auto;
   background-color: #8d99a6;
