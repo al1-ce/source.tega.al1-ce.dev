@@ -189,13 +189,15 @@ var TegakiUI = {
     btn.textContent = TegakiStrings.close;
     $T.on(btn, 'click', Tegaki.onCancelClick);
     frag.appendChild(btn);
-    
+
+    /*
     btn = $T.el('span');
     btn.id = 'tegaki-finish-btn';
     btn.className = 'tegaki-mb-btn';
     btn.textContent = TegakiStrings.finish;
     $T.on(btn, 'click', Tegaki.onDoneClick);
     frag.appendChild(btn);
+    */
     
     return frag;
   },
