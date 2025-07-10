@@ -19,8 +19,8 @@ class TegakiTone extends TegakiPencil {
     this.useAlphaDynamics = true;
     this.usePreserveAlpha = true;
     
-    this.sizeDynamicsEnabled = false;
-    this.alphaDynamicsEnabled = true;
+    this.sizeDynamicsEnabled = true;
+    this.alphaDynamicsEnabled = false;
     
     this.matrix = [
       [0, 8, 2, 10],
